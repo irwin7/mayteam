@@ -1,9 +1,26 @@
-let ElOpenBtn =  document.querySelector('.site-header__menu-btn');
-let ElNav = document.querySelector('.nav');
+let elOpenBtn =  document.querySelector('.site-header__menu-btn');
+let elDarkBtn =  document.querySelector('.nav__dark-btn');
+let elNav = document.querySelector('.nav');
+let elBody = document.querySelector('body')
 
-ElOpenBtn.addEventListener('click' , function(){
-  ElNav.classList.toggle('open')
+
+var image = document.querySelector("#logo");
+var imageFoot = document.querySelector("#footer-logo");
+
+elOpenBtn.addEventListener('click' , function(){
+  elNav.classList.toggle('open')
 })
-ElOpenBtn.addEventListener('click' , function(){
-  ElOpenBtn.classList.toggle('rotate')
+elOpenBtn.addEventListener('click' , function(){
+  elOpenBtn.classList.toggle('rotate')
+})
+elDarkBtn.addEventListener('click' , () =>{
+  elBody.classList.toggle('dark');
+  console.log(elBody.classList.value);
+  if(document.body.classList.value == 'dark'){
+    image.src = "img/logo-wh.svg";
+    imageFoot.src = "img/logo-wh.svg";
+  }else{
+    image.src = "img/logo.svg";
+    imageFoot.src = "img/logo.svg";
+  }
 })
